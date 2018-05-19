@@ -29,7 +29,7 @@ build:
 ca-certificates.crt:
 	cp $(CA_BUNDLE) .
 
-build-release: ca-certificates.crt
+build-release: 
 	docker run --rm -v $(PWD)/..:/go/src/github.com/cesanta/docker_auth \
 	  $(BUILDER_IMAGE) sh -x -c "\
 	    apk update && apk add git make py2-pip && pip install GitPython && \
